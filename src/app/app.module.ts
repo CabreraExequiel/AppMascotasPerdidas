@@ -8,6 +8,11 @@ import { FormComponent } from './ComponentesReutilizables/form/form.component';
 import { InicioComponent } from './Componentes/inicio/inicio.component';
 import { MascotasPerdidasComponent } from './Componentes/mascotas-perdidas/mascotas-perdidas.component';
 import { MascotasEncontradasComponent } from './Componentes/mascotas-encontradas/mascotas-encontradas.component';
+import { AppRoutingModule } from './app-routing.module';
+import { NuevaMascotasComponent } from './Componentes/nueva-mascotas/nueva-mascotas.component';
+import { DonacionesComponent } from './Componentes/donaciones/donaciones.component';
+import { ContactoComponent } from './Componentes/contacto/contacto.component';
+
 
 @NgModule({
   declarations: [
@@ -17,10 +22,14 @@ import { MascotasEncontradasComponent } from './Componentes/mascotas-encontradas
     FormComponent,
     InicioComponent,
     MascotasPerdidasComponent,
-    MascotasEncontradasComponent
+    MascotasEncontradasComponent,
+    NuevaMascotasComponent,
+    DonacionesComponent,
+    ContactoComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,6 +8,8 @@ import { ApiMascotasService } from 'src/app/Servicios/api-mascotas.service';
 })
 export class MascotasPerdidasComponent implements OnInit {
 
+loggedIn = false;
+
   constructor(private datosApi: ApiMascotasService) { }
   perdidos: any;
 
@@ -15,6 +17,11 @@ export class MascotasPerdidasComponent implements OnInit {
     this.datosApi.verMascotas().subscribe(data =>{
       this.perdidos = data;
     })
+
+    const token = localStorage.getItem('token');
+    if (token) {
+      this.loggedIn = true;
+    }
   }
 
 }

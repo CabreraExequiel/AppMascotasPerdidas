@@ -18,4 +18,8 @@ export class ApiMascotasService {
   verAdopcion(): Observable<any>{
     return this.http.get(`${this.apiURL}/ver/adopcion`)
   }
+
+  login(credentials: { email: string, password: string }): Observable<any> {
+    return this.http.post(`${this.apiURL}/login`, credentials);
+  }
 }

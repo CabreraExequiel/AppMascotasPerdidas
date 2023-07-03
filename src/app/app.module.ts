@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { DonacionesComponent } from './Componentes/donaciones/donaciones.component';
 import { ContactoComponent } from './Componentes/contacto/contacto.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -33,7 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
     
   ],
   providers: [],

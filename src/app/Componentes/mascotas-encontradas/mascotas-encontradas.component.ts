@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiMascotasService } from 'src/app/Servicios/api-mascotas.service';
 
 @Component({
   selector: 'app-mascotas-encontradas',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MascotasEncontradasComponent implements OnInit {
 
-  constructor() { }
+  constructor(private datosApi: ApiMascotasService) { }
+  adopcion: any;
 
   ngOnInit(): void {
+    this.datosApi.verAdopcion().subscribe(data =>{
+      this.adopcion = data;
+    })
   }
 
 }

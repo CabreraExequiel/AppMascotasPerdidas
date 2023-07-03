@@ -7,112 +7,77 @@
 <div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col-sm">
         <div class="card">
-            <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcRPMKnq00NF_T7RusUNeLrSazRZM0S5O8_AOcw2iBTmYTxd3Q7uXf0sW41odpAKqSblKDMUMHGb8nZRo9g" class="card-img-top w-100" alt="...">
+            <img [src]="perdidos[0].url_img" class="card-img-top w-100" alt="...">
             <div class="card-body">
-              <h5 class="card-title"><b>Raza:</b> Golden Retriever</h5>
-              <p class="card-text"><b>Descripcion:</b> Se encontro Golden amarillo en buen estado, tiene un collar rojo con un colgante en forma de hueso.</p>
-              <p class="card-text"><b>Fecha:</b> 30/5/23</p>
-              <p class="card-text"><b>Lugar:</b> Tavella y Guarumba</p>
+              <h5 class="card-title"><b>Raza:</b> {{perdidos[0].raza}}</h5>
+              <p class="card-text"><b>Descripcion:</b> {{perdidos[0].descripcion}}</p>
+              <p class="card-text"><b>Fecha:</b> {{perdidos[0].fecha}}</p>
+              <p class="card-text"><b>Lugar:</b> {{perdidos[0].ubicacion}}</p>
               <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
             </div>
           </div>
       </div>
       <div class="col-sm">
         <div class="card">
-            <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcRPMKnq00NF_T7RusUNeLrSazRZM0S5O8_AOcw2iBTmYTxd3Q7uXf0sW41odpAKqSblKDMUMHGb8nZRo9g" class="card-img-top w-100" alt="...">
+            <img [src]="perdidos[1].url_img" class="card-img-top w-100" alt="...">
             <div class="card-body">
-              <h5 class="card-title"><b>Raza:</b> Golden Retriever</h5>
-              <p class="card-text"><b>Descripcion:</b> Se encontro Golden amarillo en buen estado, tiene un collar rojo con un colgante en forma de hueso.</p>
-              <p class="card-text"><b>Fecha:</b> 30/5/23</p>
-              <p class="card-text"><b>Lugar:</b> Tavella y Guarumba</p>
+              <h5 class="card-title"><b>Raza:</b> {{perdidos[1].raza}}</h5>
+              <p class="card-text"><b>Descripcion:</b> {{perdidos[1].descripcion}}</p>
+              <p class="card-text"><b>Fecha:</b> {{perdidos[1].fecha}}</p>
+              <p class="card-text"><b>Lugar:</b> {{perdidos[1].ubicacion}}</p>
               <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
             </div>
           </div>
       </div>
       <div class="col-sm">
         <div class="card">
-            <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcRPMKnq00NF_T7RusUNeLrSazRZM0S5O8_AOcw2iBTmYTxd3Q7uXf0sW41odpAKqSblKDMUMHGb8nZRo9g" class="card-img-top w-100" alt="...">
+            <img [src]="perdidos[2].url_img" class="card-img-top w-100" alt="...">
             <div class="card-body">
-              <h5 class="card-title"><b>Raza:</b> Golden Retriever</h5>
-              <p class="card-text"><b>Descripcion:</b> Se encontro Golden amarillo en buen estado, tiene un collar rojo con un colgante en forma de hueso.</p>
-              <p class="card-text"><b>Fecha:</b> 30/5/23</p>
-              <p class="card-text"><b>Lugar:</b> Tavella y Guarumba</p>
+              <h5 class="card-title"><b>Raza:</b> {{perdidos[2].raza}}</h5>
+              <p class="card-text"><b>Descripcion:</b> {{perdidos[2].descripcion}}</p>
+              <p class="card-text"><b>Fecha:</b> {{perdidos[2].fecha}}</p>
+              <p class="card-text"><b>Lugar:</b> {{perdidos[2].ubicacion}}</p>
               <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
             </div>
           </div>
       </div>
       <div class="col-sm">
         <div class="card">
-            <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcRPMKnq00NF_T7RusUNeLrSazRZM0S5O8_AOcw2iBTmYTxd3Q7uXf0sW41odpAKqSblKDMUMHGb8nZRo9g" class="card-img-top w-100" alt="...">
-            <div class="card-body">
-              <h5 class="card-title"><b>Raza:</b> Golden Retriever</h5>
-              <p class="card-text"><b>Descripcion:</b> Se encontro Golden amarillo en buen estado, tiene un collar rojo con un colgante en forma de hueso.</p>
-              <p class="card-text"><b>Fecha:</b> 30/5/23</p>
-              <p class="card-text"><b>Lugar:</b> Tavella y Guarumba</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          <img [src]="perdidos[3].url_img" class="card-img-top w-100" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><b>Raza:</b> {{perdidos[3].raza}}</h5>
+            <p class="card-text"><b>Descripcion:</b> {{perdidos[3].descripcion}}</p>
+            <p class="card-text"><b>Fecha:</b> {{perdidos[3].fecha}}</p>
+            <p class="card-text"><b>Lugar:</b> {{perdidos[3].ubicacion}}</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
             </div>
           </div>
       </div>
       <div class="col-sm">
         <div class="card">
-            <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcRPMKnq00NF_T7RusUNeLrSazRZM0S5O8_AOcw2iBTmYTxd3Q7uXf0sW41odpAKqSblKDMUMHGb8nZRo9g" class="card-img-top w-100" alt="...">
-            <div class="card-body">
-              <h5 class="card-title"><b>Raza:</b> Golden Retriever</h5>
-              <p class="card-text"><b>Descripcion:</b> Se encontro Golden amarillo en buen estado, tiene un collar rojo con un colgante en forma de hueso.</p>
-              <p class="card-text"><b>Fecha:</b> 30/5/23</p>
-              <p class="card-text"><b>Lugar:</b> Tavella y Guarumba</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          <img [src]="perdidos[4].url_img" class="card-img-top w-100" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><b>Raza:</b> {{perdidos[4].raza}}</h5>
+            <p class="card-text"><b>Descripcion:</b> {{perdidos[4].descripcion}}</p>
+            <p class="card-text"><b>Fecha:</b> {{perdidos[4].fecha}}</p>
+            <p class="card-text"><b>Lugar:</b> {{perdidos[4].ubicacion}}</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
             </div>
           </div>
       </div>
       <div class="col-sm">
         <div class="card">
-            <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcRPMKnq00NF_T7RusUNeLrSazRZM0S5O8_AOcw2iBTmYTxd3Q7uXf0sW41odpAKqSblKDMUMHGb8nZRo9g" class="card-img-top w-100" alt="...">
-            <div class="card-body">
-              <h5 class="card-title"><b>Raza:</b> Golden Retriever</h5>
-              <p class="card-text"><b>Descripcion:</b> Se encontro Golden amarillo en buen estado, tiene un collar rojo con un colgante en forma de hueso.</p>
-              <p class="card-text"><b>Fecha:</b> 30/5/23</p>
-              <p class="card-text"><b>Lugar:</b> Tavella y Guarumba</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          <img [src]="perdidos[5].url_img" class="card-img-top w-100" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><b>Raza:</b> {{perdidos[5].raza}}</h5>
+            <p class="card-text"><b>Descripcion:</b> {{perdidos[5].descripcion}}</p>
+            <p class="card-text"><b>Fecha:</b> {{perdidos[5].fecha}}</p>
+            <p class="card-text"><b>Lugar:</b> {{perdidos[5].ubicacion}}</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
             </div>
           </div>
       </div>
-      <div class="col-sm">
-        <div class="card">
-            <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcRPMKnq00NF_T7RusUNeLrSazRZM0S5O8_AOcw2iBTmYTxd3Q7uXf0sW41odpAKqSblKDMUMHGb8nZRo9g" class="card-img-top w-100" alt="...">
-            <div class="card-body">
-              <h5 class="card-title"><b>Raza:</b> Golden Retriever</h5>
-              <p class="card-text"><b>Descripcion:</b> Se encontro Golden amarillo en buen estado, tiene un collar rojo con un colgante en forma de hueso.</p>
-              <p class="card-text"><b>Fecha:</b> 30/5/23</p>
-              <p class="card-text"><b>Lugar:</b> Tavella y Guarumba</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
-      </div>
-      <div class="col-sm">
-        <div class="card">
-            <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcRPMKnq00NF_T7RusUNeLrSazRZM0S5O8_AOcw2iBTmYTxd3Q7uXf0sW41odpAKqSblKDMUMHGb8nZRo9g" class="card-img-top w-100" alt="...">
-            <div class="card-body">
-              <h5 class="card-title"><b>Raza:</b> Golden Retriever</h5>
-              <p class="card-text"><b>Descripcion:</b> Se encontro Golden amarillo en buen estado, tiene un collar rojo con un colgante en forma de hueso.</p>
-              <p class="card-text"><b>Fecha:</b> 30/5/23</p>
-              <p class="card-text"><b>Lugar:</b> Tavella y Guarumba</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
-      </div>
-      <div class="col-sm">
-        <div class="card">
-            <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcRPMKnq00NF_T7RusUNeLrSazRZM0S5O8_AOcw2iBTmYTxd3Q7uXf0sW41odpAKqSblKDMUMHGb8nZRo9g" class="card-img-top w-100" alt="...">
-            <div class="card-body">
-              <h5 class="card-title"><b>Raza:</b> Golden Retriever</h5>
-              <p class="card-text"><b>Descripcion:</b> Se encontro Golden amarillo en buen estado, tiene un collar rojo con un colgante en forma de hueso.</p>
-              <p class="card-text"><b>Fecha:</b> 30/5/23</p>
-              <p class="card-text"><b>Lugar:</b> Tavella y Guarumba</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
-      </div>
+      
     
     
   </div>

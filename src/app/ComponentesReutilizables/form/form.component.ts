@@ -10,11 +10,11 @@ import { ApiMascotasService } from 'src/app/Servicios/api-mascotas.service';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-  loginForm: FormGroup; // instancia de FormGroup
-  loggedIn = false; // variable para controlar el estado de inicio de sesión
+  loginForm: FormGroup; 
+  loggedIn = false; 
 
   constructor(private http: HttpClient, private router: Router, private apiMascotasService: ApiMascotasService, private formBuilder: FormBuilder) {
-    this.loginForm = this.formBuilder.group({ // agregue FormControl para cada campo de entrada
+    this.loginForm = this.formBuilder.group({ 
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]]
     });

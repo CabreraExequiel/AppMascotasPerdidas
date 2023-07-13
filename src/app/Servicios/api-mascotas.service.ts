@@ -31,6 +31,12 @@ export class ApiMascotasService {
     return this.http.delete(`${this.apiURL}/eliminar/mascota/${id}`);
   }
 
+  agregarAdopcion(perdido: any): Observable<any>{
+    return this.http.post(`${this.apiURL}/nueva/adopcion`, perdido);
+  }
  
+  eliminarAdopcion(id: number): Observable<any> {
+    return this.http.delete(`${this.apiURL}/eliminar/adopcion/${id}`);
+  }
   
 }

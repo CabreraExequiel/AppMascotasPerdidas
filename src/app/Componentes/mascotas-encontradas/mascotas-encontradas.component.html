@@ -1,13 +1,47 @@
 <div class="container-fluid" style="margin-top: 70px;">
     <div class="container text-center d-flex justify-content-center">
         <h1 style="font-family: anton;">Mascotas en Adopcion</h1>
-        <button style="z-index: 3;" class="btn btn-primary position-fixed bottom-0 end-0 mb-3 me-3" *ngIf="loggedIn"  ><i class="fa-solid fa-circle-plus"></i></button>
+        <button style="z-index: 3;" class="btn btn-primary position-fixed bottom-0 end-0 mb-3 me-3" (click)="abrirModal()" *ngIf="loggedIn"  ><i class="fa-solid fa-circle-plus"></i></button>
     </div>
 </div>
 
-<div class="row row-cols-1 row-cols-md-3 g-4">
 
- 
+<!-- Formulario para agregar nueva mascota -->
+<div *ngIf="mostrarFormulario" class="alert alert-primary">
+  <h5 class="alert-heading">Agregar Nueva Adopcion</h5>
+<div class="col-sm">
+  <div class="card">
+    <div class="card-body">
+      <form [formGroup]="nuevaAdopcionForm">
+        <div class="mb-3">
+          <label for="raza" class="form-label">Raza:</label>
+          <input type="text" class="form-control" id="raza" formControlName="raza">
+        </div>
+        <div class="mb-3">
+          <label for="descripcion" class="form-label">Edad:</label>
+          <input type="text" class="form-control" id="descripcion" formControlName="descripcion">
+        </div>
+        <div class="mb-3">
+          <label for="fecha" class="form-label">Sexo:</label>
+          <input type="text" class="form-control" id="fecha" formControlName="fecha">
+        </div>
+        <div class="mb-3">
+          <label for="ubicacion" class="form-label">Descripcion:</label>
+          <input type="text" class="form-control" id="ubicacion" formControlName="ubicacion">
+        </div>
+        <div class="mb-3">
+          <label for="url_img" class="form-label">URL de la Imagen:</label>
+          <input type="text" class="form-control" id="url_img" formControlName="url_img">
+        </div>
+        <button type="button" class="btn btn-primary" (click)="agregarAdopcion()">Agregar</button>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
   <div class="col-sm" *ngFor="let mascota of adopcion">
     <div class="card">
       <img [src]="mascota.url_img" class="card-img-top w-100" alt="...">
@@ -17,6 +51,7 @@
         <p class="card-text"><b>Sexo:</b> {{mascota.sexo}}</p>
         <p class="card-text"><b>Descripción:</b> {{mascota.descripcion}}</p>
         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <button class="me-3" *ngIf="loggedIn" (click)="eliminarAdopcion(mascota)" ><i class="fa-solid fa-circle-minus"></i></button>
       </div>
     </div>
   </div>

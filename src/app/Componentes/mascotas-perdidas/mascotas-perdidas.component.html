@@ -6,6 +6,7 @@
     </div>
 </div>
 
+
 <!-- Formulario para agregar nueva mascota -->
 <div *ngIf="mostrarFormulario" class="alert alert-primary">
   <h5 class="alert-heading">Agregar Nueva Mascota Perdida</h5>
@@ -43,7 +44,6 @@
 
 
 <div class="row row-cols-1 row-cols-md-3 g-4">
-
       <div class="col-sm" *ngFor="let mascota of perdidos">
         <div class="card">
           <img [src]="mascota.url_img" class="card-img-top w-100" alt="...">

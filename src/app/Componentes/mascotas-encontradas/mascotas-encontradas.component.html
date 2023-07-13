@@ -1,48 +1,27 @@
 <div class="container-fluid" style="margin-top: 70px;">
     <div class="container text-center d-flex justify-content-center">
-      <button class="me-3" *ngIf="loggedIn"><i class="fa-solid fa-circle-minus"></i></button>
         <h1 style="font-family: anton;">Mascotas en Adopcion</h1>
-        <button class="ms-3" *ngIf="loggedIn"><i class="fa-solid fa-circle-plus"></i></button>
+        <button style="z-index: 3;" class="btn btn-primary position-fixed bottom-0 end-0 mb-3 me-3" *ngIf="loggedIn"  ><i class="fa-solid fa-circle-plus"></i></button>
     </div>
 </div>
 
 <div class="row row-cols-1 row-cols-md-3 g-4">
-  <div class="col-sm">
+
+ 
+  <div class="col-sm" *ngFor="let mascota of adopcion">
     <div class="card">
-      <img [src]="adopcion[0].url_img" class="card-img-top w-100" alt="...">
+      <img [src]="mascota.url_img" class="card-img-top w-100" alt="...">
       <div class="card-body">
-        <h5 class="card-title"><b>Raza:</b>{{adopcion[0].raza}} </h5>
-        <p class="card-text"><b>Edad:</b>{{adopcion[0].edad}} </p>
-        <p class="card-text"><b>Sexo:</b>{{adopcion[0].sexo}} </p>
-        <p class="card-text"><b>Descripcion:</b>{{adopcion[0].descripcion}} </p>
+        <h5 class="card-title"><b>Raza:</b> {{mascota.raza}}</h5>
+        <p class="card-text"><b>Edad:</b> {{mascota.edad}}</p>
+        <p class="card-text"><b>Sexo:</b> {{mascota.sexo}}</p>
+        <p class="card-text"><b>Descripción:</b> {{mascota.descripcion}}</p>
         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
       </div>
+    </div>
   </div>
-  <div class="col-sm">
-    <div class="card">
-        <img [src]="adopcion[1].url_img" class="card-img-top w-100" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"><b>Raza:</b>{{adopcion[1].raza}} </h5>
-          <p class="card-text"><b>Edad:</b>{{adopcion[1].edad}} </p>
-          <p class="card-text"><b>Sexo:</b>{{adopcion[1].sexo}} </p>
-          <p class="card-text"><b>Descripcion:</b>{{adopcion[1].descripcion}} </p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-      </div>
-  </div>
-  <div class="col-sm">
-    <div class="card">
-      <img [src]="adopcion[2].url_img" class="card-img-top w-100" alt="...">
-      <div class="card-body">
-        <h5 class="card-title"><b>Raza:</b>{{adopcion[2].raza}} </h5>
-        <p class="card-text"><b>Edad:</b>{{adopcion[2].edad}} </p>
-        <p class="card-text"><b>Sexo:</b>{{adopcion[2].sexo}} </p>
-        <p class="card-text"><b>Descripcion:</b>{{adopcion[2].descripcion}} </p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-      </div>
-  </div>
+
+
     
     
   </div>

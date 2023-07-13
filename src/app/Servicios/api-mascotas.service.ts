@@ -22,4 +22,15 @@ export class ApiMascotasService {
   login(credentials: { email: string, password: string }): Observable<any> {
     return this.http.post(`${this.apiURL}/login`, credentials);
   }
+
+  agregarMascota(perdido: any): Observable<any>{
+    return this.http.post(`${this.apiURL}/nueva/mascota`, perdido);
+  }
+
+  eliminarMascota(id: number): Observable<any> {
+    return this.http.delete(`${this.apiURL}/eliminar/mascota/${id}`);
+  }
+
+ 
+  
 }

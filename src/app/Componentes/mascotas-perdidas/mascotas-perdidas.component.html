@@ -1,86 +1,61 @@
 <div class="container-fluid" style="margin-top: 70px;">
     <div class="container text-center d-flex justify-content-center">
-      <button class="me-3" *ngIf="loggedIn"><i class="fa-solid fa-circle-minus"></i></button>
+      
         <h1 style="font-family: anton;">Mascotas Perdidas</h1>
-        <button class="ms-3" *ngIf="loggedIn"><i class="fa-solid fa-circle-plus"></i></button>
+        <button style="z-index: 3;" class="btn btn-primary position-fixed bottom-0 end-0 mb-3 me-3" *ngIf="loggedIn" (click)="abrirModal()" ><i class="fa-solid fa-circle-plus"></i></button>
     </div>
 </div>
 
+<!-- Formulario para agregar nueva mascota -->
+<div *ngIf="mostrarFormulario" class="alert alert-primary">
+  <h5 class="alert-heading">Agregar Nueva Mascota Perdida</h5>
+<div class="col-sm">
+  <div class="card">
+    <div class="card-body">
+      <form [formGroup]="nuevaMascotaForm">
+        <div class="mb-3">
+          <label for="raza" class="form-label">Raza:</label>
+          <input type="text" class="form-control" id="raza" formControlName="raza">
+        </div>
+        <div class="mb-3">
+          <label for="descripcion" class="form-label">Descripción:</label>
+          <input type="text" class="form-control" id="descripcion" formControlName="descripcion">
+        </div>
+        <div class="mb-3">
+          <label for="fecha" class="form-label">Fecha:</label>
+          <input type="text" class="form-control" id="fecha" formControlName="fecha">
+        </div>
+        <div class="mb-3">
+          <label for="ubicacion" class="form-label">Ubicación:</label>
+          <input type="text" class="form-control" id="ubicacion" formControlName="ubicacion">
+        </div>
+        <div class="mb-3">
+          <label for="url_img" class="form-label">URL de la Imagen:</label>
+          <input type="text" class="form-control" id="url_img" formControlName="url_img">
+        </div>
+        <button type="button" class="btn btn-primary" (click)="agregarMascota()">Agregar</button>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
 <div class="row row-cols-1 row-cols-md-3 g-4">
-  
-    <div class="col-sm">
+
+      <div class="col-sm" *ngFor="let mascota of perdidos">
         <div class="card">
-            <img [src]="perdidos[0].url_img" class="card-img-top w-100" alt="...">
-            <div class="card-body">
-              <h5 class="card-title"><b>Raza:</b> {{perdidos[0].raza}}</h5>
-              <p class="card-text"><b>Descripcion:</b> {{perdidos[0].descripcion}}</p>
-              <p class="card-text"><b>Fecha:</b> {{perdidos[0].fecha}}</p>
-              <p class="card-text"><b>Lugar:</b> {{perdidos[0].ubicacion}}</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
-      </div>
-      <div class="col-sm">
-        <div class="card">
-            <img [src]="perdidos[1].url_img" class="card-img-top w-100" alt="...">
-            <div class="card-body">
-              <h5 class="card-title"><b>Raza:</b> {{perdidos[1].raza}}</h5>
-              <p class="card-text"><b>Descripcion:</b> {{perdidos[1].descripcion}}</p>
-              <p class="card-text"><b>Fecha:</b> {{perdidos[1].fecha}}</p>
-              <p class="card-text"><b>Lugar:</b> {{perdidos[1].ubicacion}}</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
-      </div>
-      <div class="col-sm">
-        <div class="card">
-            <img [src]="perdidos[2].url_img" class="card-img-top w-100" alt="...">
-            <div class="card-body">
-              <h5 class="card-title"><b>Raza:</b> {{perdidos[2].raza}}</h5>
-              <p class="card-text"><b>Descripcion:</b> {{perdidos[2].descripcion}}</p>
-              <p class="card-text"><b>Fecha:</b> {{perdidos[2].fecha}}</p>
-              <p class="card-text"><b>Lugar:</b> {{perdidos[2].ubicacion}}</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
-      </div>
-      <div class="col-sm">
-        <div class="card">
-          <img [src]="perdidos[3].url_img" class="card-img-top w-100" alt="...">
+          <img [src]="mascota.url_img" class="card-img-top w-100" alt="...">
           <div class="card-body">
-            <h5 class="card-title"><b>Raza:</b> {{perdidos[3].raza}}</h5>
-            <p class="card-text"><b>Descripcion:</b> {{perdidos[3].descripcion}}</p>
-            <p class="card-text"><b>Fecha:</b> {{perdidos[3].fecha}}</p>
-            <p class="card-text"><b>Lugar:</b> {{perdidos[3].ubicacion}}</p>
+            <h5 class="card-title"><b>Raza:</b> {{mascota.raza}}</h5>
+            <p class="card-text"><b>Descripción:</b> {{mascota.descripcion}}</p>
+            <p class="card-text"><b>Fecha:</b> {{mascota.fecha}}</p>
+            <p class="card-text"><b>Lugar:</b> {{mascota.ubicacion}}</p>
             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
+            <button class="me-3" *ngIf="loggedIn" (click)="eliminarMascota(mascota)"><i class="fa-solid fa-circle-minus"></i></button>
           </div>
+        </div>
       </div>
-      <div class="col-sm">
-        <div class="card">
-          <img [src]="perdidos[4].url_img" class="card-img-top w-100" alt="...">
-          <div class="card-body">
-            <h5 class="card-title"><b>Raza:</b> {{perdidos[4].raza}}</h5>
-            <p class="card-text"><b>Descripcion:</b> {{perdidos[4].descripcion}}</p>
-            <p class="card-text"><b>Fecha:</b> {{perdidos[4].fecha}}</p>
-            <p class="card-text"><b>Lugar:</b> {{perdidos[4].ubicacion}}</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
-      </div>
-      <div class="col-sm">
-        <div class="card">
-          <img [src]="perdidos[5].url_img" class="card-img-top w-100" alt="...">
-          <div class="card-body">
-            <h5 class="card-title"><b>Raza:</b> {{perdidos[5].raza}}</h5>
-            <p class="card-text"><b>Descripcion:</b> {{perdidos[5].descripcion}}</p>
-            <p class="card-text"><b>Fecha:</b> {{perdidos[5].fecha}}</p>
-            <p class="card-text"><b>Lugar:</b> {{perdidos[5].ubicacion}}</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
-      </div>
-      
-    
-    
+       
   </div>

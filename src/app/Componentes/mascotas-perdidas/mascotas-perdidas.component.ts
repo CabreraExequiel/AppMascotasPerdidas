@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiMascotasService } from 'src/app/Servicios/api-mascotas.service';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-mascotas-perdidas',
@@ -9,8 +10,12 @@ import { ApiMascotasService } from 'src/app/Servicios/api-mascotas.service';
 export class MascotasPerdidasComponent implements OnInit {
 
 loggedIn = false;
+  nuevaMascotaForm!: FormGroup;
+  mostrarFormulario = false;
+  
 
-  constructor(private datosApi: ApiMascotasService) { }
+
+  constructor(private datosApi: ApiMascotasService, private formBuilder: FormBuilder) { }
   perdidos: any;
 
   ngOnInit(): void {
@@ -22,6 +27,42 @@ loggedIn = false;
     if (token) {
       this.loggedIn = true;
     }
+
+    this.nuevaMascotaForm = this.formBuilder.group({
+      raza:[''],
+      descripcion: [''],
+      fecha: [''],
+      ubicacion: [''],
+      url_img: ['']
+    })
   }
+  agregarMascota(){
+    const nuevaMascota = this.nuevaMascotaForm.value;
+    this.datosApi.agregarMascota(nuevaMascota).subscribe(() => {
+      alert("Se agrego exitosamente");
+      this.perdidos.push(nuevaMascota);
+      this.nuevaMascotaForm.reset();
+    })
+  }
+
+  eliminarMascota(mascota: any) {
+    this.datosApi.eliminarMascota(mascota.id).subscribe(() => {
+      const index = this.perdidos.indexOf(mascota);
+      
+      if (index > -1) {
+        this.perdidos.splice(index, 1);
+      }
+    });
+    alert("eliminada");
+    
+  }
+  
+
+  abrirModal() {
+    this.mostrarFormulario = true;
+  }
+  
+
+  
 
 }

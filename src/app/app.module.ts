@@ -12,7 +12,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { DonacionesComponent } from './Componentes/donaciones/donaciones.component';
 import { ContactoComponent } from './Componentes/contacto/contacto.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LandingPageComponent } from './Componentes/landing-page/landing-page.component';
 
 
 
@@ -28,6 +29,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MascotasEncontradasComponent,
     DonacionesComponent,
     ContactoComponent,
+    LandingPageComponent,
  
     
   ],
@@ -35,7 +37,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
     
   ],
   providers: [],

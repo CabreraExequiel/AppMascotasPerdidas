@@ -5,10 +5,11 @@ import { NgModule } from "@angular/core";
 import { MascotasEncontradasComponent } from "./Componentes/mascotas-encontradas/mascotas-encontradas.component";
 import { DonacionesComponent } from "./Componentes/donaciones/donaciones.component";
 import { ContactoComponent } from "./Componentes/contacto/contacto.component";
+import { LandingPageComponent } from "./Componentes/landing-page/landing-page.component";
 
 
 const routes: Routes = [
-    { path: '', component: InicioComponent },
+    { path: '', component: LandingPageComponent },
     { path: 'inicio', component: InicioComponent },
     { path: 'perdidos', component: MascotasPerdidasComponent},
     { path: 'encontrados', component:MascotasEncontradasComponent},

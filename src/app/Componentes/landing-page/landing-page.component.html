@@ -1,0 +1,25 @@
+<div class="container d-flex flex-column justify-content-center align-items-center vh-100 px-2 w-50">
+    <div class="landing-page bg-light p-4 rounded mb-3">
+      <h1 style="font-family: anton;" class="text-center">Bienvenidos a Mascotas10</h1>
+      <p>Nuestra aplicación está diseñada para ayudarte a encontrar mascotas perdidas y facilitar la adopción de adorables compañeros peludos en busca de un hogar amoroso.</p>
+  
+      <form class="register-form pb-5 mt-5">
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="email" placeholder="Enter your email" [(ngModel)]="email">
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Enter your password" [(ngModel)]="password">
+        </div>
+        <div class="d-grid gap-2 d-md-block">
+          <button type="submit" class="btn btn-primary" (click)="onRegister()">Register</button>
+          <button type="button" class="btn btn-primary ms-3" (click)="enter()">Ya estoy registrado</button>
+        </div>
+      </form>
+    </div>
+    <div class="image-container">
+      <img src="https://img.freepik.com/vector-gratis/lindo-fondo-huella-pisada-rastrea-tu-animal-compania_1017-44716.jpg?w=740&t=st=1689538233~exp=1689538833~hmac=69b61ce4fce20e39b5d14458280a91407556455401506ce443f4afd99b43e6b4" alt="Background Image">
+    </div>
+  </div>
+  

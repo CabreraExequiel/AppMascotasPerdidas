@@ -16,5 +16,12 @@ export class InicioComponent implements OnInit {
       this.mascota = data;
     })
   }
+  showPrevious(): void {
+    // Logic to show the previous card
+  }
+
+  showNext(): void {
+    // Logic to show the next card
+  }
 
 }

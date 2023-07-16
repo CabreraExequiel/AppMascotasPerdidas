@@ -7,21 +7,33 @@ import { ApiMascotasService } from 'src/app/Servicios/api-mascotas.service';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent implements OnInit {
+  mascota: any;
+  currentCardIndex = 0;
 
   constructor(private datosApi: ApiMascotasService) { }
-  mascota: any;
+ 
 
   ngOnInit(): void {
     this.datosApi.verMascotas().subscribe(data =>{
       this.mascota = data;
     })
+    
   }
   showPrevious(): void {
-    // Logic to show the previous card
+    if (this.currentCardIndex > 0) {
+      this.currentCardIndex--;
+    } else {
+      this.currentCardIndex = this.mascota.length - 1;
+    }
   }
 
   showNext(): void {
-    // Logic to show the next card
+    if (this.currentCardIndex < this.mascota.length - 1) {
+      this.currentCardIndex++;
+    } else {
+      this.currentCardIndex = 0;
+    }
   }
+  
 
 }

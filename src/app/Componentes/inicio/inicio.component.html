@@ -26,16 +26,19 @@
           <!-------------SeccionPrincipal------------>
           <div class="col-sm">
             <div class="card">
-                <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcRPMKnq00NF_T7RusUNeLrSazRZM0S5O8_AOcw2iBTmYTxd3Q7uXf0sW41odpAKqSblKDMUMHGb8nZRo9g" class="card-img-top w-100" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title"><b>Raza:</b> Golden Retriever</h5>
-                  <p class="card-text"><b>Descripcion:</b> Se encontro Golden amarillo en buen estado, tiene un collar rojo con un colgante en forma de hueso.</p>
-                  <p class="card-text"><b>Fecha:</b> 30/5/23</p>
-                  <p class="card-text"><b>Lugar:</b> Tavella y Guarumba</p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
+              <button type="button" class="arrow-btn btn btn-primary next-btn" (click)="showNext()">Next &gt;</button>
+              <img [src]="mascota[currentCardIndex]?.url_img" class="card-img-top w-100" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"><b>Raza:</b> {{ mascota[currentCardIndex]?.raza }}</h5>
+                <p class="card-text"><b>Descripcion:</b> {{ mascota[currentCardIndex]?.descripcion }}</p>
+                <p class="card-text"><b>Fecha:</b> {{ mascota[currentCardIndex]?.fecha }}</p>
+                <p class="card-text"><b>Lugar:</b> {{ mascota[currentCardIndex]?.ubicacion }}</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
               </div>
+              <button type="button" class="arrow-btn btn btn-primary prev-btn" (click)="showPrevious()">&lt; Previous</button>
+            </div>
           </div>
+          
           <!-------------Links y Donaciones------------>
           <div class="col-sm">
              <div class="border dorder-solid bg-secondary border-primary"><a href="" class="text-decoration-none text-white ms-2"><b>Protectora de animales</b></a></div>
